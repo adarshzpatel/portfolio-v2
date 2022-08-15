@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,9 +9,34 @@
     @apply bg-zinc-900 text-zinc-400 font-inter font-light ;
   }
   h1,h2,h3,h4,h5,h6{
-    @apply font-sora font-medium leading-loose
+    @apply font-sora font-medium pb-2
   }
   p{
     @apply leading-[1.75]
   }
+  
+/*Custom scrollbar*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-zinc-800;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+ @apply bg-zinc-500 rounded-full
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 duration-300 ease-out;
+}
+
+html{
+  scroll-behavior: smooth;
+}
 }
