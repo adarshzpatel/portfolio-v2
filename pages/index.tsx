@@ -1,186 +1,49 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import CurlyDivider from "@components/CurlyDivider";
-import StyledLink from "@components/StyledLink";
-import React from "react";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import Heading from "@components/Heading";
-import { FiArrowUpRight } from "react-icons/fi";
-import Link from "next/link";
+import Header from "@components/Header";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
-interface WorkExperience {
-  from: string;
-  to: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  additionalInfo?: string[];
-  href?: string;
+ 
+export const getStaticProps: GetStaticProps<{
+  mdxSource: MDXRemoteSerializeResult;
+}> = async () => {
+  // MDX text - can be from a local file, database, anywhere
+  const source = "Hey 👋 , I am Adarsh Patel and I would like to describe myself as a *digital craftsman*  who loves building cool *web apps / dapps* . I also like to participate in *hackathons* , particularly web3/blockchain themed so be sure to lookout for me if you want a team mate. <br/><br/> I am currently a 3rd year CSE Undergraduate Student looking for *internship opportunities.   <br/><br/> My preferred tech stack is *Next.js / React + TailwindCss + TypeScript* . ";
+  const mdxSource = await serialize(source);
+  return { props: { mdxSource } };
+};
+
+interface Props {
+  mdxSource: MDXRemoteSerializeResult;
 }
 
-const WORK_EXPERIENCE: WorkExperience[] = [
-  {
-    from: "2022 June",
-    to: "Now",
-    title: "PRNTS",
-    subtitle: "Frontend Engineer",
-    description:
-      "A collaborative web3 social platform for music fans to connect with their favorite artists, and invest into their future revenues ",
-    additionalInfo: [
-      "Built whole frontend from scratch using React / Typescript / TailwindCss",
-      "Developed component library for internal use",
-    ],
-    href: "https://prnts.vercel.app",
-  },
-  {
-    from: "2021 Nov",
-    to: "2022 Jan",
-    title: "DIGI-K-LABS",
-    subtitle: "Software Engineer Intern",
-    description: "Contributed to Lightvue component library",
-  },
-];
+const Timeline = dynamic(()=> import('@components/Timeline'),{
+  suspense:true
+})
 
-const Home: NextPage = () => {
+const Home: NextPage<Props> = ({ mdxSource }) => {
   return (
     <div className="my-8 flex flex-col gap-4">
       <section>
-        <h6 className="text-2xl itali font-medium text-zinc-100 leading-relaxed">
-          Adarsh Patel
-        </h6>
-        <p className="font-fira">Developer / Designer / Web3 </p>
+        <Header />
       </section>
-
       <CurlyDivider />
-
       <section>
         <Heading>About</Heading>
-        <p>
-          Lorem <StyledLink href="#">ipsum </StyledLink> dolor sit amet
-          consectetur, adipisicing elit. A iusto iure officia molestiae. Est
-          dolor soluta magni perferendis molestias, earum perspiciatis fugiat
-          dignissimos? Illum saepe, odio cumque pariatur labore ea.
-        </p>
+        <div>{mdxSource && <MDXRemote {...mdxSource} />}</div>
       </section>
       {/* Work Experience */}
-      <section>
-        <Heading>Work Experience</Heading>
-        <div className="space-y-8">
-          {WORK_EXPERIENCE.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-md hover:bg-zinc-800 hover:p-6 cursor-pointer duration-300 easae-out"
-            >
-              <div className="flex items-center font-sora text-base justify-between">
-                <Link
-                  target={"_blank"}
-                  rel="noreferrer"
-                  href={item?.href ? item.href : "#"}
-                >
-                  <a className="flex gap-1  text-zinc-300 hover:text-white hover:underline underline-offset-4 duration-300 ease-out font-medium items-center">
-                    {item.title}
-                    <span>
-                      <FiArrowUpRight className="h-5 w-5" />
-                    </span>
-                  </a>
-                </Link>
-                <p className="col-span-1 text-sm">
-                  {item.from} — {item.to}
-                </p>
-              </div>
-              <p className="mb-1.5 font-medium text-sm font-fira text-zinc-400">
-                {item.subtitle}
-              </p>
-              <p className="mb-2">{item.description}</p>
-              {item.additionalInfo && (
-                <ul className="list-disc pl-4 list-inside space-y-2">
-                  {item.additionalInfo.map((info, i) => (
-                    <li key={i}>{info}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
+      <section className="mt-4">
+        <Heading>Timeline</Heading>
+        <Suspense fallback="Loading...">
+          <Timeline />
+        </Suspense>
       </section>
-      <section>
-        <Heading>Hackathons</Heading>
-        <div className="space-y-8">
-          {WORK_EXPERIENCE.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-md hover:bg-zinc-800 hover:p-6 cursor-pointer duration-300 easae-out"
-            >
-              <div className="flex items-center font-sora text-base justify-between">
-                <Link
-                  target={"_blank"}
-                  rel="noreferrer"
-                  href={item?.href ? item.href : "#"}
-                >
-                  <a className="flex gap-1  text-zinc-300 hover:text-white hover:underline underline-offset-4 duration-300 ease-out font-medium items-center">
-                    {item.title}
-                    <span>
-                      <FiArrowUpRight className="h-5 w-5" />
-                    </span>
-                  </a>
-                </Link>
-                <p className="col-span-1 text-sm">
-                  {item.from} — {item.to}
-                </p>
-              </div>
-              <p className="mb-1.5 font-medium text-sm font-fira text-zinc-400">
-                {item.subtitle}
-              </p>
-              <p className="mb-2">{item.description}</p>
-              {item.additionalInfo && (
-                <ul className="list-disc pl-4 list-inside space-y-2">
-                  {item.additionalInfo.map((info, i) => (
-                    <li key={i}>{info}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-      <section>
-        <Heading>Projects</Heading>
-        <div className="space-y-8">
-          {WORK_EXPERIENCE.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-md hover:bg-zinc-800 hover:p-6 cursor-pointer duration-300 easae-out"
-            >
-              <div className="flex items-center font-sora text-base justify-between">
-                <Link
-                  target={"_blank"}
-                  rel="noreferrer"
-                  href={item?.href ? item.href : "#"}
-                >
-                  <a className="flex gap-1  text-zinc-300 hover:text-white hover:underline underline-offset-4 duration-300 ease-out font-medium items-center">
-                    {item.title}
-                    <span>
-                      <FiArrowUpRight className="h-5 w-5" />
-                    </span>
-                  </a>
-                </Link>
-                <p className="col-span-1 text-sm">
-                  {item.from} — {item.to}
-                </p>
-              </div>
-              <p className="mb-1.5 font-medium text-sm font-fira text-zinc-400">
-                {item.subtitle}
-              </p>
-              <p className="mb-2">{item.description}</p>
-              {item.additionalInfo && (
-                <ul className="list-disc pl-4 list-inside space-y-2">
-                  {item.additionalInfo.map((info, i) => (
-                    <li key={i}>{info}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+
       {/* Projects */}
       {/* Hackathons */}
       <CurlyDivider />
