@@ -12,13 +12,13 @@ const Header = (props: Props) => {
           Adarsh Patel
         </h6>
         <div className="flex space-x-2">
-          <SocialMediaIcon icon={FiGithub} name="Github" href=""/>
-          <SocialMediaIcon icon={FiTwitter} name="Twitter" href=""/>
-          <SocialMediaIcon icon={FaLinkedin} name="LinkedIn" href=""/>
-          <SocialMediaIcon icon={FiMail} name="Gmail" href=""/>
+          <SocialMediaIcon icon={FiGithub} name="Github" href="https://github.com/adarshzpatel"/>
+          <SocialMediaIcon icon={FiTwitter} name="Twitter" href="https://twitter.com/adarshzpatel"/>
+          <SocialMediaIcon icon={FaLinkedin} name="LinkedIn" href="https://www.linkedin.com/in/adarshpatelx/"/>
+          <SocialMediaIcon icon={FiMail} name="Gmail" href="mailto:adarshzpatel@gmail.com"/>
         </div>
       </div>
-      <p className="font-fira">Developer / Designer / Web3 </p>
+      <p className="font-mono">Developer / Designer / Web3 </p>
     </div>
   );
 };
