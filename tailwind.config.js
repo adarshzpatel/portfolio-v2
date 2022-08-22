@@ -10,7 +10,6 @@ module.exports = {
       fontFamily:{
         "sora":"Sora",
         "inter":"Inter",
-        "fira":"Fira Code",
       }
     },
   },
