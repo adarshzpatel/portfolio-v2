@@ -17,7 +17,7 @@ export const timelineData: TimelineItem[] = [
     description:
       "Started my journey as a community leader for Web3Bharat BuidlHub in my college.",
 
-    href: "https://github.com/adarshzpatel/tezmint",
+    href: "https://twitter.com/web3bharat",
   },
   {
     from: "2022 August",

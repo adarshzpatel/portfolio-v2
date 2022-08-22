@@ -7,7 +7,7 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap-reverse gap-2 ">
         <h6 className="text-2xl  font-medium text-zinc-100 ">
           Adarsh Patel
         </h6>
