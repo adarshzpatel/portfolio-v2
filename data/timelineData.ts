@@ -10,20 +10,23 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
   {
-    from: "2022 August - Now",
+    from: "2022 September",
     to: "",
-    title: "Joined Web3Bharat",
-    tags: ["Community Leader","Mentor"],
+    title: "EthOnline 2022 Finalist",
+    tags: ["Web3 Frontend Developer"],
     description:
-      "Started my journey as a community leader for Web3Bharat BuidlHub in my college.",
-
-    href: "https://twitter.com/web3bharat",
+      "Our team built RevFi - a DeFi Lending platform matching companies generating revenue and DeFi lenders.",
+    additionalInfo: [
+      "Selected among Finalist",
+      "Worked on the frontend , web3 & backend integration , designed UI / UX. 
+    ],
+    href: "https://ethglobal.com/showcase/revfi-revenue-based-defi-lending-z8awe",
   },
   {
     from: "2022 August",
     to: "",
     title: "TezAsia Hackathon 2022",
-    tags: ["Frontend Engineer"],
+    tags: ["Fullstack Web3 dev"],
     description:
       "Built TezMint , a nft minting platform where users can upload their image and mint it as NFT on Tezos blockchain ",
     additionalInfo: [
