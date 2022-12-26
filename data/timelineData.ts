@@ -18,7 +18,7 @@ export const timelineData: TimelineItem[] = [
       "Our team built RevFi - a DeFi Lending platform matching companies generating revenue and DeFi lenders.",
     additionalInfo: [
       "Selected among Finalist",
-      "Worked on the frontend , web3 & backend integration , designed UI / UX. 
+      "Worked on the frontend , web3 & backend integration , designed UI / UX. "
     ],
     href: "https://ethglobal.com/showcase/revfi-revenue-based-defi-lending-z8awe",
   },
