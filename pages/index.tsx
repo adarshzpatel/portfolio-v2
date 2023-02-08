@@ -65,7 +65,7 @@ const Home: NextPage<Props> = ({ mdxSource }) => {
                 <Timeline />
               </Suspense>
             </Tab.Panel>
-            <Tab.Panel> I am still working on this 🔨. You can find my projects  on <StyledLink href={"https://www.github.com/adarshzpatel"}>Github</StyledLink> </Tab.Panel>
+            <Tab.Panel> I am still working on this 🔨. You can find my projects  on <StyledLink href={"https://adarshpatel.notion.site/2b9dc81d464e4737bf58e435e3b41076?v=455796f2573f470e9a77796472dceda7"}>Notion</StyledLink> </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
       </section>
