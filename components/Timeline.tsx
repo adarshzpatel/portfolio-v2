@@ -21,7 +21,7 @@ const Timeline = (props: Props) => {
               rel="noreferrer"
               href={item?.href ? item.href : "#"}
             >
-              <a className="inline-flex flex-wrap underline  sm:no-underline  text-zinc-300 hover:text-white hover:underline underline-offset-4 duration-300 ease-out font-medium items-center">
+              <a target="_blank"  className="inline-flex flex-wrap underline  sm:no-underline  text-zinc-300 hover:text-white hover:underline underline-offset-4 duration-300 ease-out font-medium items-center">
                   {item.title}
                 <span>
                   <FiArrowUpRight className="h-5 w-5 ml-1 hidden sm:block" />
