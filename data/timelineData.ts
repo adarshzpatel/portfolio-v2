@@ -10,6 +10,18 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
   {
+    from:"2023 January",
+    to"2023 July",
+    title:"Frontend Engineer at Sanchar.xyz",
+    tags: ["Frontend Engineer"],
+    description: "Sanchar.xyz is a social network for freelancers ,connecting them with opportunities."
+    additionalInfo:[
+      "Spearheaded the development and integration of the frontend interface, ensuring seamless collaboration between frontend and backend components.",
+      "Tech Stack : React/Next.js , Typescript , Axios , Zustand , TailwindCSS"  
+    ]  
+    href:"https://www.sanchar.xyz/"
+  },
+  {
     from: "2022 September",
     to: "",
     title: "EthOnline 2022 Finalist",
@@ -36,8 +48,8 @@ export const timelineData: TimelineItem[] = [
   },
   {
     from: "2022 June",
-    to: "Now",
-    title: "PRNTS",
+    to: "2022 August",
+    title: "Frontend Engineer at PRNTS",
     tags: ["Frontend Engineer"],
     description:
       "A collaborative web3 social platform for music fans to connect with their favorite artists, and invest into their future revenues ",
