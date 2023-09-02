@@ -11,14 +11,14 @@ export interface TimelineItem {
 export const timelineData: TimelineItem[] = [
   {
     from:"2023 January",
-    to"2023 July",
+    to:"2023 July",
     title:"Frontend Engineer at Sanchar.xyz",
     tags: ["Frontend Engineer"],
-    description: "Sanchar.xyz is a social network for freelancers ,connecting them with opportunities."
+    description: "Sanchar.xyz is a social network for freelancers ,connecting them with opportunities.",
     additionalInfo:[
       "Spearheaded the development and integration of the frontend interface, ensuring seamless collaboration between frontend and backend components.",
       "Tech Stack : React/Next.js , Typescript , Axios , Zustand , TailwindCSS"  
-    ]  
+    ]  ,
     href:"https://www.sanchar.xyz/"
   },
   {

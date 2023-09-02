@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps<{
 }> = async () => {
   // MDX text - can be from a local file, database, anywhere
   const source =
-    "Hey 👋 , I am Adarsh Patel and I would like to describe myself as a *digital craftsman*  who loves building cool *web apps / dapps* . I also like to participate in *hackathons* , particularly web3/blockchain themed so be sure to lookout for me if you want a team mate. <br/><br/> I am currently a 3rd year CSE Undergraduate Student looking for *internship opportunities*.   <br/><br/> My preferred tech stack is *Next.js / React + TailwindCss + TypeScript* . ";
+    "Hey 👋 , I am Adarsh Patel and I would like to describe myself as a *digital craftsman*  who loves building cool *web apps / dapps* . I also like to participate in *hackathons* , particularly web3/blockchain themed so be sure to lookout for me if you want a team mate. <br/><br/> I am currently a final year CSE Undergraduate Student looking for *internship opportunities*.   <br/><br/> My preferred tech stack is *Next.js / React + TailwindCss + TypeScript* . ";
   const mdxSource = await serialize(source);
   return { props: { mdxSource } };
 };

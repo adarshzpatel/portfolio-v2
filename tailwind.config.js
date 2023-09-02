@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        "sora":"Sora",
-        "inter":"Inter",
+        "sora":"Space Grotesk",
+        "inter":"Space Grotesk",
       }
     },
   },
