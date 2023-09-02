@@ -61,6 +61,7 @@ const Home: NextPage<Props> = ({ mdxSource }) => {
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel>
+
               <Suspense fallback="Loading...">
                 <Timeline />
               </Suspense>
